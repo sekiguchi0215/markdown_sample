@@ -5,10 +5,7 @@
 </p>
 <p>
   <strong>Content:</strong>
-  <% renderer = Redcarpet::Render::HTML %>
-  <% extensions = { tables: true } %>
-  <% markdown = Redcarpet::Markdown.new(renderer, extensions) %>
-  <%= markdown.render(@post.content).html_safe %>
+  <%= markdown(@post.content) %>
 </p>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
